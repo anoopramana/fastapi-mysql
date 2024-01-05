@@ -30,7 +30,7 @@ def get_db():
         db.close()
 
 #Now we need a way to route the get_db function to get a database session. 
-db_dependency = Annotated[Session, Depends(get_db)]
+db_dependency = Annotated(Session, Depends(get_db))
 
 
 #Create first fastapi endpoit to create and save a user 
@@ -41,6 +41,3 @@ db_dependency = Annotated[Session, Depends(get_db)]
 #     db.add(db_user)
 #     db.commit()
     
-@app.get("/")
-def read_root():
-    return {"Hello you massive legend. You've just successfully connected a fast api app with a mysql database to a web browser"}

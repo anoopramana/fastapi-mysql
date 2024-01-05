@@ -7,10 +7,10 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
 #link to databse 
-URL_DATABASE = 'mysql+pymysql://root:test1234!@127.0.0.1:3306/ReflectionAppDatabase'
+URL_DATABASE = 'sqlite:///./reflectionapp.db'
 
 #create an engine variable with link to database
-engine = create_engine(URL_DATABASE)
+engine = create_engine(URL_DATABASE, connect_args={'check_same_thread': False})
 
 #Create a configured session factory class. Sessionmaker acts as a factory for Session. Engine acts as a factory for Connection. 
 #Autocommit = 
