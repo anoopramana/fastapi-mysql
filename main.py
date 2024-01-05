@@ -32,3 +32,12 @@ def get_db():
 #Now we need a way to route the get_db function to get a database session. 
 db_dependency = Annotated(Session, Depends(get_db))
 
+
+#Create first fastapi endpoit to create and save a user 
+
+# @app.post("/users/", status_code=status.HTTP_201_CREATED)
+# async def create_user(user: UserBase, db: db_dependency):
+#     db_user = models.User(**user.model_dump())
+#     db.add(db_user)
+#     db.commit()
+    

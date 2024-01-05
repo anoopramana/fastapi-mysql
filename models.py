@@ -17,7 +17,7 @@ class User(Base):
 
 class Post(Base):
     __tablename__ = 'reflections'
-    id = Column(Integer, primary_kay=True, index=True)
+    id = Column(Integer, primary_key=True, index=True)
     title = Column(String(50))
     content = Column(String(500))
     user_id = Column(Integer)
