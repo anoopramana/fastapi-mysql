@@ -1,0 +1,28 @@
+Create a reflection app with fastapi + mysql (Using: sqlalchemy and pymysql)
+
+#Faster creation of projects
+In terminal:
+cd desktop
+mkdir 'project name' + cd into it
+python -m venv venv
+code . 
+
+In VScode:
+source venv/bin/acitvate
+pip install fastapi, uvicorn, sqlalchemy and pymysql
+
+mysql
+1. Brew installs mysql to your system:
+brew install mysql
+
+2. Initial install is without a root password. to secure it:
+mysql_secure_installation
+
+3. Its configured to only allow local host connections by default. To start ad restart at login:
+brew services start mysql 
+
+4. To connect run: (Find out what this does exactly)
+mysql -u root
+
+Or, if you don't want/need a background service you can just run:
+  /usr/local/opt/mysql/bin/mysqld_safe --datadir\=/usr/local/var/mysql
