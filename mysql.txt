@@ -1,0 +1,30 @@
+mysql
+Installation process:
+1. Now simply run the below command in your terminal
+$ brew install mysql
+
+2. Start the MySQL service
+$ brew services start mysql
+
+3. Set root MySQL password
+$ mysqladmin -u root password 'secretpassword'
+
+4. Access MySQL on mac
+$ mysql -u root -p
+
+Command will ask the password you just set in the previous step.
+
+Things to remember:
+1. Stop MySQL service on Mac start
+If you don't want MySQL service to start every time you start your mac then run the below command
+$ brew services stop mysql
+
+This will stop the MySQL service from running in the background.
+
+2.Start MySQL service
+You can always run the below command to start the MySQL server on mac and it will not start on the next computer restart
+$ mysql.server start
+
+3.Stop MySQL service
+If you want to immediately stop the MySQL service then run the below command
+$ mysql.server stop

@@ -1,9 +1,8 @@
-#This file is what sqlalchemy (ORM) uses to create the tables in our database.
-
-from sqlalchemy import Boolean, Column, Integer, String
-
 #Connect this model to the database
 from database import Base
+
+#This file is what sqlalchemy (ORM) uses to create the tables in our database.
+from sqlalchemy import Boolean, Column, Integer, String, ForeignKey
 
 #Decide how many tables you need. 
 #For this app we need two connected tables one for users and reflections
@@ -12,14 +11,19 @@ from database import Base
 class User(Base):
     __tablename__ = 'users'
     id = Column(Integer, primary_key=True, index=True) 
-    username = Column(String(50), unique=True) 
+    email = Column(String, unique=True)
+    username = Column(String, unique=True)
+    first_name = Column(String)
+    last_name = Column(String)
+    hashed_password = Column(String)
+    is_active = Column(Boolean, default=True)
+    role = Column(String)
 
-
-class Post(Base):
+class Reflections(Base):
     __tablename__ = 'reflections'
     id = Column(Integer, primary_key=True, index=True)
-    title = Column(String(50))
-    content = Column(String(500))
-    user_id = Column(Integer)
-
-
+    title = Column(String)
+    description = Column(String)
+    priority = Column(Integer)
+    complete = Column(Boolean, default=False)
+    owner_id = Column(Integer, ForeignKey("users.id"))

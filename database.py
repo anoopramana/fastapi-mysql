@@ -9,6 +9,12 @@ from sqlalchemy.ext.declarative import declarative_base
 #link to databse 
 URL_DATABASE = 'mysql+pymysql://root:test1234!@127.0.0.1:3306/ReflectionAppDatabase'
 
+#Sometimes its better to hide the username and passwords in apps:
+# import os
+# user = os.environ["MYSQL_USER"]
+# password = os.environ["MYSQL_PASSWORD"]
+# uri = f"mysql://{user}:{password}@example.com/testdb"
+
 #create an engine variable with link to database
 engine = create_engine(URL_DATABASE)
 
